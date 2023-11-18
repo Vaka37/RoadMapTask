@@ -34,6 +34,7 @@ class FavouritesViewController: UIViewController{
         super.viewWillAppear(animated)
         detailCharacters = networkService.arrayFavorites
         favouritesCollectionView.reloadData()
+        createSearchBar()
     }
     
     private func createCollectionView(){
