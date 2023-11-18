@@ -50,7 +50,7 @@ class LaunchViewController: UIViewController{
         }else{
             loaderImage.layer.removeAllAnimations()
             progressTimer.invalidate()
-           let viewController = TabBarController()
+            let viewController = TabBarController()
             viewController.selectedIndex = 0
             viewController.modalPresentationStyle = .fullScreen
             present(viewController, animated: false)
@@ -67,16 +67,5 @@ class LaunchViewController: UIViewController{
             titleImage.trailingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.trailingAnchor,constant: -40),
             titleImage.leadingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leadingAnchor,constant: 40)
         ])
-    }
-}
-
-extension UIImageView{
-    func rotate() {
-        let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotation.toValue = NSNumber(value: Double.pi * 2)
-        rotation.duration = 2
-        rotation.isCumulative = true
-        rotation.repeatCount = Float.greatestFiniteMagnitude
-        self.layer.add(rotation, forKey: "rotationAnimation")
     }
 }

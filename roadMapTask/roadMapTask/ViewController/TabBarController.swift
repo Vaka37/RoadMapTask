@@ -9,10 +9,9 @@ import Foundation
 import UIKit
 
 class TabBarController: UITabBarController{
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         setUpTabBar()
     }
     
@@ -22,11 +21,13 @@ class TabBarController: UITabBarController{
         tabBar.unselectedItemTintColor = .gray
         self.viewControllers = [createFirstVC(), createSecondVC()]
     }
-
+    
     private func createFirstVC() -> UIViewController {
         let vc = UINavigationController(rootViewController: EpisodesViewController())
         vc.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         vc.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Home"), selectedImage: UIImage(named: "HomeTap"))
+        vc.view.backgroundColor = .white
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top:0, left: 100, bottom: 0, right: 0)
         vc.tabBarItem.tag = 0
         return vc
     }
@@ -34,6 +35,8 @@ class TabBarController: UITabBarController{
         let vc = UINavigationController(rootViewController: FavouritesViewController())
         vc.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         vc.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Favourites"), selectedImage: UIImage(named: "FavouritesTap"))
+        vc.view.backgroundColor = .white
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top:0, left: 0, bottom: 0, right: 100)
         vc.tabBarItem.tag = 1
         return vc
     }

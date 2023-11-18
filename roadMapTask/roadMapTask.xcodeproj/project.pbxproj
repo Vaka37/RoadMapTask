@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5127D6B2B016B5A002AC8A3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5127D6A2B016B5A002AC8A3 /* DetailViewController.swift */; };
+		D51330612B08EAE7004CEDAA /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51330602B08EAE7004CEDAA /* ImageCache.swift */; };
 		D531CAF92AFC018C00105353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531CAF82AFC018C00105353 /* AppDelegate.swift */; };
 		D531CAFD2AFC018C00105353 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531CAFC2AFC018C00105353 /* EpisodesViewController.swift */; };
 		D531CB022AFC018E00105353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D531CB012AFC018E00105353 /* Assets.xcassets */; };
@@ -14,9 +16,16 @@
 		D531CB102AFC2A7100105353 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531CB0F2AFC2A7100105353 /* LaunchViewController.swift */; };
 		D531CB122AFC351200105353 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531CB112AFC351200105353 /* TabBarController.swift */; };
 		D531CB142AFC37B700105353 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531CB132AFC37B700105353 /* FavouritesViewController.swift */; };
+		D56FDBF32AFD6DD800845FB7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56FDBF22AFD6DD800845FB7 /* Model.swift */; };
+		D56FDBF52AFD708400845FB7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56FDBF42AFD708400845FB7 /* NetworkService.swift */; };
+		D5CB2CD92B04265F009E806C /* InformationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB2CD82B04265F009E806C /* InformationTableView.swift */; };
+		D5D458B12B04FA27007747BE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D458B02B04FA27007747BE /* Extension.swift */; };
+		D5EC1CB72B002C3F00239351 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EC1CB62B002C3F00239351 /* EpisodeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D5127D6A2B016B5A002AC8A3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D51330602B08EAE7004CEDAA /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		D531CAF52AFC018C00105353 /* roadMapTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roadMapTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D531CAF82AFC018C00105353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D531CAFC2AFC018C00105353 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +35,11 @@
 		D531CB0F2AFC2A7100105353 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		D531CB112AFC351200105353 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D531CB132AFC37B700105353 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		D56FDBF22AFD6DD800845FB7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D56FDBF42AFD708400845FB7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D5CB2CD82B04265F009E806C /* InformationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableView.swift; sourceTree = "<group>"; };
+		D5D458B02B04FA27007747BE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D5EC1CB62B002C3F00239351 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +72,71 @@
 		D531CAF72AFC018C00105353 /* roadMapTask */ = {
 			isa = PBXGroup;
 			children = (
-				D531CAF82AFC018C00105353 /* AppDelegate.swift */,
-				D531CAFC2AFC018C00105353 /* EpisodesViewController.swift */,
-				D531CB0F2AFC2A7100105353 /* LaunchViewController.swift */,
-				D531CB132AFC37B700105353 /* FavouritesViewController.swift */,
-				D531CB112AFC351200105353 /* TabBarController.swift */,
+				D54F14552B06B5B200EBA094 /* AppDelegate */,
+				D5D458B22B04FA30007747BE /* Extension */,
+				D5CB2CD72B042645009E806C /* Cell */,
+				D54F14562B06B5F100EBA094 /* Model */,
+				D54F14572B06B60100EBA094 /* NetworkServise */,
+				D54F14542B06B58200EBA094 /* ViewController */,
 				D531CB012AFC018E00105353 /* Assets.xcassets */,
 				D531CB062AFC018E00105353 /* Info.plist */,
 				D531CB0C2AFC27C600105353 /* LaunchScreen.storyboard */,
 			);
 			path = roadMapTask;
+			sourceTree = "<group>";
+		};
+		D54F14542B06B58200EBA094 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D531CB0F2AFC2A7100105353 /* LaunchViewController.swift */,
+				D5127D6A2B016B5A002AC8A3 /* DetailViewController.swift */,
+				D531CAFC2AFC018C00105353 /* EpisodesViewController.swift */,
+				D531CB132AFC37B700105353 /* FavouritesViewController.swift */,
+				D531CB112AFC351200105353 /* TabBarController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D54F14552B06B5B200EBA094 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D531CAF82AFC018C00105353 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D54F14562B06B5F100EBA094 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D56FDBF22AFD6DD800845FB7 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D54F14572B06B60100EBA094 /* NetworkServise */ = {
+			isa = PBXGroup;
+			children = (
+				D56FDBF42AFD708400845FB7 /* NetworkService.swift */,
+			);
+			path = NetworkServise;
+			sourceTree = "<group>";
+		};
+		D5CB2CD72B042645009E806C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D5EC1CB62B002C3F00239351 /* EpisodeCollectionViewCell.swift */,
+				D5CB2CD82B04265F009E806C /* InformationTableView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D5D458B22B04FA30007747BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D5D458B02B04FA27007747BE /* Extension.swift */,
+				D51330602B08EAE7004CEDAA /* ImageCache.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,11 +209,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5CB2CD92B04265F009E806C /* InformationTableView.swift in Sources */,
+				D5127D6B2B016B5A002AC8A3 /* DetailViewController.swift in Sources */,
 				D531CAFD2AFC018C00105353 /* EpisodesViewController.swift in Sources */,
 				D531CB122AFC351200105353 /* TabBarController.swift in Sources */,
+				D5D458B12B04FA27007747BE /* Extension.swift in Sources */,
+				D5EC1CB72B002C3F00239351 /* EpisodeCollectionViewCell.swift in Sources */,
+				D51330612B08EAE7004CEDAA /* ImageCache.swift in Sources */,
 				D531CB102AFC2A7100105353 /* LaunchViewController.swift in Sources */,
+				D56FDBF32AFD6DD800845FB7 /* Model.swift in Sources */,
 				D531CB142AFC37B700105353 /* FavouritesViewController.swift in Sources */,
 				D531CAF92AFC018C00105353 /* AppDelegate.swift in Sources */,
+				D56FDBF52AFD708400845FB7 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
