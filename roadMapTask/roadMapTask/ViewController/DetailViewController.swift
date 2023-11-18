@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 final class DetailViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
@@ -77,7 +78,7 @@ final class DetailViewController: UIViewController,UIImagePickerControllerDelega
                     self.createDetailVC()
                 }
             case.failure(_):
-                print("Error")
+                self.showErrorAlert(text: "Проверте подключение интернета")
             }
         }
     }
@@ -122,20 +123,11 @@ final class DetailViewController: UIViewController,UIImagePickerControllerDelega
         self.present(alert, animated: true, completion: nil)
     }
     
-    func openCamera()
-    {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        else
-        {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+    func openCamera(){
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerController.SourceType.camera
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     func openGallary() {

@@ -10,7 +10,6 @@ import UIKit
 
 
 class FavouritesViewController: UIViewController{
-    
     //MARK: - properties
     private let flowLayout: UICollectionViewFlowLayout = {
         $0.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -53,7 +52,7 @@ class FavouritesViewController: UIViewController{
 }
 
 extension FavouritesViewController:  UICollectionViewDelegate,UICollectionViewDataSource{
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return detailCharacters.count
     }
@@ -75,7 +74,6 @@ extension FavouritesViewController:  UICollectionViewDelegate,UICollectionViewDa
 }
 
 extension FavouritesViewController: EpisodeCollectionViewCellDelegate {
-
     func addFavourite(resultModel: Results?) {
         guard let resultModel else { return }
         networkService.add(results: resultModel)

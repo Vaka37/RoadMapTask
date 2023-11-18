@@ -117,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D56FDBF42AFD708400845FB7 /* NetworkService.swift */,
+				D51330602B08EAE7004CEDAA /* ImageCache.swift */,
 			);
 			path = NetworkServise;
 			sourceTree = "<group>";
@@ -134,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				D5D458B02B04FA27007747BE /* Extension.swift */,
-				D51330602B08EAE7004CEDAA /* ImageCache.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";

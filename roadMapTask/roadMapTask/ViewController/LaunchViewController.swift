@@ -29,7 +29,6 @@ class LaunchViewController: UIViewController{
         super.viewDidLoad()
         createLaunchViewController()
     }
-    
     //MARK: - Methods
     
     private func createLaunchViewController(){

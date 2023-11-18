@@ -9,13 +9,12 @@ import Foundation
 import UIKit
 
 
-
 final class NetworkService {
     static let shared = NetworkService()
     var arrayFavorites: [Results] = []
-
+    
     func add(results: Results) {
-        var index = arrayFavorites.firstIndex{ $0.id == results.id }
+        let index = arrayFavorites.firstIndex{ $0.id == results.id }
         self.arrayFavorites.append(results)
         arrayFavorites.forEach { item in
             if item.id == results.id{
@@ -23,8 +22,8 @@ final class NetworkService {
                 arrayFavorites.remove(at: index)
             }
         }
-        
     }
+    
     func getInfoCharacters(http: String, complition: @escaping(Result<CharactersModel,Error>) -> Void){
         guard let url = URL(string: http) else {return}
         URLSession.shared.dataTask(with: url){data, response, error in
@@ -47,7 +46,6 @@ final class NetworkService {
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 complition(.failure(error))
-                print(error)
                 return
             }
             guard let data = data else { return }
@@ -59,5 +57,4 @@ final class NetworkService {
             }
         }.resume()
     }
-    
 }

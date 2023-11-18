@@ -22,7 +22,9 @@ final class EpisodeCollectionViewCell: UICollectionViewCell{
     private lazy var isFavourites = false
     var identefire = "My cell"
     private lazy var avatar: UIImageView = {
-        $0.contentMode = .scaleAspectFill
+        $0.contentMode = .scaleToFill
+        $0.layer.cornerRadius = 15
+        $0.clipsToBounds = true
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UIImageView())
@@ -139,10 +141,10 @@ final class EpisodeCollectionViewCell: UICollectionViewCell{
     
     private func createAnchor(){
         NSLayoutConstraint.activate([
-            avatar.topAnchor.constraint(equalTo: self.topAnchor,constant: 5),
-            avatar.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            avatar.topAnchor.constraint(equalTo: self.topAnchor),
             avatar.heightAnchor.constraint(equalToConstant: self.bounds.height / 1.5),
-            avatar.widthAnchor.constraint(equalToConstant: self.bounds.width),
+            avatar.rightAnchor.constraint(equalTo: self.rightAnchor),
+            avatar.leftAnchor.constraint(equalTo: self.leftAnchor),
             
             name.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: 10),
             name.leftAnchor.constraint(equalTo: avatar.leftAnchor,constant: 10),

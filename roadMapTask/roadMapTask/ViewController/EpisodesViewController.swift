@@ -18,10 +18,10 @@ final class EpisodesViewController: UIViewController{
         return $0
     }(UICollectionViewFlowLayout())
     
-    var episodeCollection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    private lazy var episodeCollection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     private let searchController = UISearchController(searchResultsController: nil)
-    var detailCharacters: [Results] = []
-    var filteredDetailCharacters: [Results] = []
+    private lazy var detailCharacters: [Results] = []
+    private lazy  var filteredDetailCharacters: [Results] = []
     private var pagination: CharactersModel?
     private var networkService = NetworkService.shared
     private lazy var itemIndexArray = 0
@@ -79,9 +79,9 @@ final class EpisodesViewController: UIViewController{
         self.episodeCollection.reloadData()
     }
     
-   @objc private func handleGesture(){
+    @objc private func handleGesture(){
         detailCharacters.remove(at: itemIndexArray)
-       self.episodeCollection.reloadData()
+        self.episodeCollection.reloadData()
     }
 }
 
@@ -92,7 +92,7 @@ extension EpisodesViewController:  UICollectionViewDelegate,UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-            swipeLeft.direction = .left
+        swipeLeft.direction = .left
         cell.contentView.addGestureRecognizer(swipeLeft)
     }
     
@@ -122,7 +122,7 @@ extension EpisodesViewController:  UICollectionViewDelegate,UICollectionViewData
                             self.episodeCollection.reloadData()
                         }
                     case.failure(_):
-                        print("Error")
+                        self.showErrorAlert(text: "Error")
                     }
                 }
             }
@@ -143,7 +143,6 @@ extension EpisodesViewController:  UICollectionViewDelegate,UICollectionViewData
 }
 
 extension EpisodesViewController: EpisodeCollectionViewCellDelegate {
-
     func addFavourite(resultModel: Results?) {
         guard let resultModel else { return }
         networkService.add(results: resultModel)

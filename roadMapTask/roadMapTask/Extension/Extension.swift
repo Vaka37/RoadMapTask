@@ -10,8 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
-        contentMode = mode
+    func downloaded(from url: URL) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
@@ -25,14 +24,14 @@ extension UIImageView {
             }
         }.resume()
     }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+    func downloaded(from link: String) {
         guard let url = URL(string: link) else { return }
         var image: UIImage?
         image = ImageCache.shared.getImage(key: url.absoluteString as NSString)
         if image != nil {
             self.image = image
         }else{
-            downloaded(from: url, contentMode: mode)
+            downloaded(from: url)
         }
     }
     
@@ -43,5 +42,14 @@ extension UIImageView {
         rotation.isCumulative = true
         rotation.repeatCount = Float.greatestFiniteMagnitude
         self.layer.add(rotation, forKey: "rotationAnimation")
+    }
+}
+
+extension UIViewController {
+    func showErrorAlert(text: String) {
+        let alert = UIAlertController(title: nil, message: text, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { (action) in }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }

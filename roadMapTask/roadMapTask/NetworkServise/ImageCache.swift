@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 final class ImageCache {
-    
     static var shared = ImageCache()
     
     var cache = NSCache<NSString, UIImage>()
